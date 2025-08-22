@@ -2,15 +2,15 @@
 .season-links {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 70px 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 30px;
 }
 
 .season-links a {
   display: inline-block;
-  font-size: 20px;        /* Bigger text */
+  font-size: 10px;        /* Bigger text */
   font-weight: 600;
   color: #fff;
   background: #2563eb;    /* Blue background */
