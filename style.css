@@ -10,12 +10,12 @@
 
 .season-links a {
   display: inline-block;
-  font-size: 10px;        /* Bigger text */
+  font-size: 5ppx;        /* Bigger text */
   font-weight: 600;
   color: #fff;
   background: #2563eb;    /* Blue background */
-  padding: 12px 18px;
-  border-radius: 10px;
+  padding: 60px 40px;
+  border-radius: 30px;
   transition: background 0.3s;
 }
 
