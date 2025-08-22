@@ -49,33 +49,3 @@
         </a>
       </li>
     </ul>
-
-    <ul id="episode-list" style="line-height:2; padding-left: 20px;">
-        <li><a href="https://links.animedubhindi.com/episode/naruto-shippuden-season-11/" target="_blank">Episode 1</a></li>
-        <li><a href="https://episode-url-2.com" target="_blank">Episode 2</a></li>
-        <li><a href="https://episode-url-3.com" target="_blank">Episode 3</a></li>
-        </ul>
-
-    <a class="back" href="index.html">⬅ Back to Home</a>
-  </main>
-
-  <script>
-    // Get the Season 1 link and the episode list
-    const season1Link = document.getElementById('season1-link');
-    const episodeList = document.getElementById('episode-list');
-
-    // Add a click event listener to the Season 1 link
-    season1Link.addEventListener('click', function(event) {
-        // Prevent the default link behavior
-        event.preventDefault();
-
-        // Toggle the display of the episode list
-        if (episodeList.style.display === 'none' || episodeList.style.display === '') {
-            episodeList.style.display = 'block';
-        } else {
-            episodeList.style.display = 'none';
-        }
-    });
-  </script>
-</body>
-</html>
