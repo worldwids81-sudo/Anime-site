@@ -90,62 +90,82 @@
       margin-top: 30px;
       display: none;
     }
-    /* Center ads */
-    .ad-container {
-      text-align: center;
-      margin: 20px 0;
-    }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Anime Site</h1>
+    <h1>Latest Anime</h1>
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search anime...">
     </div>
   </header>
 
-  <div class="container">
-    <!-- Example Anime Card -->
+  <div class="container" id="animeContainer">
+    <!-- Anime Card 1 -->
     <div class="card">
       <a href="naruto.html">
-        <img src="naruto-poster.jpg" alt="Naruto Poster">
+        <img src="naruto.jpg" alt="Naruto Shippuden">
         <div class="card-body">
           <div class="card-title">Naruto Shippuden</div>
-          <div class="card-desc">Follow Naruto's journey to become Hokage.</div>
-          <div class="card-meta">500 Episodes</div>
+          <div class="card-desc">Season 1 Hindi, Tamil, Telugu, English, Japanese Episodes Available</div>
+          <div class="card-meta">By AnimeSite • August 15, 2025</div>
         </div>
       </a>
     </div>
 
-    <!-- More cards go here -->
-    <div class="no-results" id="noResults">No results found</div>
+    <!-- Anime Card 2 -->
+    <div class="card">
+      <a href="kaiju.html">
+        <img src="kaiju.jpg" alt="Kaiju No. 8">
+        <div class="card-body">
+          <div class="card-title">Kaiju No. 8</div>
+          <div class="card-desc">Season 2 Hindi, Tamil, Telugu, English, Japanese Episodes Available</div>
+          <div class="card-meta">By AnimeSite • July 19, 2025</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Anime Card 3 -->
+    <div class="card">
+      <a href="onepiece.html">
+        <img src="onepiece.jpg" alt="One Piece">
+        <div class="card-body">
+          <div class="card-title">One Piece</div>
+          <div class="card-desc">All seasons available in multiple languages</div>
+          <div class="card-meta">By AnimeSite • July 10, 2025</div>
+        </div>
+      </a>
+    </div>
   </div>
 
+  <!-- No Results message -->
+  <div id="noResults" class="no-results">❌ No results found</div>
+
   <script>
-    // Search functionality
+    // 🔎 Search functionality with "No results" handling
     const searchInput = document.getElementById("searchInput");
     const cards = document.querySelectorAll(".card");
     const noResults = document.getElementById("noResults");
 
-    searchInput.addEventListener("input", () => {
-      let searchValue = searchInput.value.toLowerCase();
-      let matchFound = false;
+    searchInput.addEventListener("input", function() {
+      let filter = searchInput.value.toLowerCase();
+      let found = false;
 
       cards.forEach(card => {
-        let title = card.querySelector(".card-title").textContent.toLowerCase();
-        if (title.includes(searchValue)) {
+        let title = card.querySelector(".card-title").innerText.toLowerCase();
+        let desc = card.querySelector(".card-desc").innerText.toLowerCase();
+
+        if (title.includes(filter) || desc.includes(filter)) {
           card.style.display = "block";
-          matchFound = true;
+          found = true;
         } else {
           card.style.display = "none";
         }
       });
 
-      noResults.style.display = matchFound ? "none" : "block";
+      // Show or hide "No results" message
+      noResults.style.display = found ? "none" : "block";
     });
   </script>
-
 </body>
 </html>
