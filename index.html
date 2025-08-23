@@ -90,6 +90,174 @@
       margin-top: 30px;
       display: none;
     }
+    /* Center ads */
+    .ad-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Latest Anime</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search anime...">
+    </div>
+  </header>
+
+  <!-- 🔹 Ad placed under header -->
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '27e8bffc33c70ea6e20c290222d27c7d',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/27e8bffc33c70ea6e20c290222d27c7d/invoke.js"></script>
+  </div>
+
+  <div class="container" id="animeContainer">
+    <!-- Anime Card 1 -->
+    <div class="card">
+      <a href="naruto.html">
+        <img src="images/MV5BZTNjOWI0ZTAtOGY1OS00ZGU0LWEyOWYtMjhkYjdlYmVjMDk2XkEyXkFqcGc%40._V1_.jpg" alt="Naruto Shippuden">
+        <div class="card-body">
+          <div class="card-title">Naruto Shippuden</div>
+          <div class="card-desc">Season 1 Hindi, Tamil, Telugu, English, Japanese Episodes Available</div>
+          <div class="card-meta">By AnimeSite • August 15, 2025</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- 🔹 Ad between cards -->
+    <div class="ad-container">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '27e8bffc33c70ea6e20c290222d27c7d',
+          'format' : 'iframe',
+          'height' : 60,
+          'width' : 468,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/27e8bffc33c70ea6e20c290222d27c7d/invoke.js"></script>
+    </div>
+
+    <!-- Anime Card 2 -->
+    <div class="card">
+      <a href="kaiju.html">
+        <img src="kaiju.jpg" alt="Kaiju No. 8">
+        <div class="card-body">
+          <div class="card-title">Kaiju No. 8</div>
+          <div class="card-desc">Season 2 Hindi, Tamil, Telugu, English, Japanese Episodes Available</div>
+          <div class="card-meta">By AnimeSite • July 19, 2025</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Anime Card 3 -->
+    <div class="card">
+      <a href="onepiece.html">
+        <img src="onepiece.jpg" alt="One Piece">
+        <div class="card-body">
+          <div class="card-title">One Piece</div>
+          <div class="card-desc">All seasons available in multiple languages</div>
+          <div class="card-meta">By AnimeSite • July 10, 2025</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- No Results message -->
+  <div id="noResults" class="no-results">❌ No results found</div>
+
+  <script>
+    // 🔎 Search functionality with "No results" handling
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card");
+    const noResults = document.getElementById("noResults");
+
+    searchInput.addEventListener("input", function() {
+      let filter = searchInput.value.toLowerCase();
+      let found = false;
+
+      cards.forEach(card => {
+        let title = card.querySelector(".card-title").innerText.toLowerCase();
+        let desc = card.querySelector(".card-desc").innerText.toLowerCase();
+
+        if (title.includes(filter) || desc.includes(filter)) {
+          card.style.display = "block";
+          found = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Show or hide "No results" message
+      noResults.style.display = found ? "none" : "block";
+    });
+  </script>
+</body>
+</html>
+      width: 200px;
+      font-size: 14px;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-body {
+      padding: 16px;
+    }
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+    .card-meta {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 14px;
+    }
+    /* No results message */
+    .no-results {
+      text-align: center;
+      font-size: 18px;
+      color: #f87171;
+      font-weight: bold;
+      margin-top: 30px;
+      display: none;
+    }
   </style>
 </head>
 <body>
